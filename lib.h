@@ -4,17 +4,18 @@
 #include <ESP8266mDNS.h>
 #include <WebSocketsServer.h>
 #include <Wire.h>
-#include <ESPAsyncTCP.h>
-#include <ESPAsyncWebServer.h>
 #include <Arduino.h>
+#include <ESP8266WebServer.h>
+#include <Hash.h>
+#include <WiFiManager.h> // Include WiFiManager library
 
 #include "logo.h" 
 #include "web-page.h"
 #include "function.h"
 
 
-AsyncWebServer server(80);
-WebSocketsServer websockets(81);
+ESP8266WebServer server(80);
+WebSocketsServer webSocket = WebSocketsServer(81);
 
 
 #define SCREEN_WIDTH 128
